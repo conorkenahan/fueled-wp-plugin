@@ -1,0 +1,27 @@
+{
+	"name": "featured-content-block",
+	"version": "1.0.0",
+	"description": "Gutenberg block that lets editors curate featured articles with a card layout.",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"lint:js": "wp-scripts lint-js src",
+		"lint:ts": "tsc --noEmit",
+		"format": "wp-scripts format"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "*",
+		"@wordpress/block-editor": "*",
+		"@wordpress/blocks": "*",
+		"@wordpress/components": "*",
+		"@wordpress/data": "*",
+		"@wordpress/i18n": "*"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.0",
+		"@types/wordpress__block-editor": "^15.0.6",
+		"@wordpress/scripts": "^30.0.0",
+		"typescript": "^5.0.0"
+	}
+}

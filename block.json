@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+
+	"name": "featured-content-block/featured-posts",
+	"version": "1.0.0",
+	"title": "Featured Posts",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Curate a card layout of featured articles powered by a cached REST API endpoint.",
+	"keywords": ["featured", "posts", "articles", "cards"],
+	"textdomain": "featured-content-block",
+
+	"editorScript": "file:./build/index.js",
+	"editorStyle":  "file:./assets/css/editor.css",
+	"style":        "file:./assets/css/style.css",
+	"viewScript":   "file:./assets/js/frontend.js",
+
+	"attributes": {
+		"postCount": {
+			"type": "number",
+			"default": 5
+		},
+		"category": {
+			"type": "string",
+			"default": ""
+		},
+		"layout": {
+			"type": "string",
+			"default": "grid",
+			"enum": ["grid", "list"]
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": ["top", "bottom"]
+		},
+		"typography": {
+			"fontSize": true
+		}
+	},
+
+	"example": {
+		"attributes": {
+			"postCount": 3,
+			"layout": "grid",
+			"showExcerpt": true,
+			"showDate": true
+		}
+	}
+}

@@ -1,0 +1,77 @@
+/**
+ * Editor-only styles for the Featured Content Block.
+ *
+ * Loaded exclusively inside the Gutenberg canvas ("editorStyle" in block.json).
+ * Never reaches the front end — safe for editor-specific overrides.
+ *
+ * style.css handles all shared layout rules (grid, card, typography).
+ * This file only adds or adjusts what looks wrong in the editor context.
+ */
+
+/* ===========================================================================
+   Disable pointer events on card links
+   =========================================================================== */
+
+/* Clicking a card link inside the editor navigates away — undesirable.
+   The block toolbar and sidebar are the intended interaction surfaces. */
+.wp-block-featured-content-block-featured-posts .fcb-card__link,
+.wp-block-featured-content-block-featured-posts .fcb-card__figure a {
+	pointer-events: none;
+	cursor: default;
+}
+
+/* ===========================================================================
+   Selected-block indicator
+   =========================================================================== */
+
+/* A dashed border gives a visual cue that this is a dynamic block whose
+   content is server-rendered, not directly editable on the canvas. */
+.wp-block-featured-content-block-featured-posts.is-selected,
+.wp-block-featured-content-block-featured-posts.has-child-selected {
+	outline: 2px dashed #007cba;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+/* ===========================================================================
+   Loading state
+   =========================================================================== */
+
+.fcb-editor-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 120px;
+	width: 100%;
+}
+
+/* ===========================================================================
+   Empty / no-posts state
+   =========================================================================== */
+
+.fcb-editor-empty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 80px;
+	padding: 1.5rem;
+	width: 100%;
+	margin: 0;
+	border: 1px dashed #c3c4c7;
+	border-radius: 4px;
+	color: #757575;
+	font-style: italic;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+/* ===========================================================================
+   Suppress scroll-in animation in the editor
+   =========================================================================== */
+
+/* Cards should appear immediately on the canvas — no fade-in delay. */
+.wp-block-featured-content-block-featured-posts .fcb-card.fcb-will-animate {
+	opacity: 1 !important;
+	transform: none !important;
+	transition: none !important;
+}
